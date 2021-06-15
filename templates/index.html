@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content={{description}} />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}" />
+  <script src="https://kit.fontawesome.com/9b6215e94a.js"></script>
+</head>
+
+<body>
+  <div class="section">
+    <div class="left-section">
+      <form action="" method="POST">
+        <input type="text" id="array" name="list_of_numbers">
+        <label for="items" placeholder="Choose"></label>
+        <select name="" id="items">
+          <option value="item-1" disabled>Bubble Sort</option>
+          <option value="item-2" disabled>Insertion Sort</option>
+          <option value="item-3" disabled>Selection Sort</option>
+          <option value="item-4">Merge Sort</option>
+        </select>
+        <button id="submit" type="submit">Submit</button>
+      </form>
+      <div class="container"></div>
+    </div>
+    <div class="right-section">
+      <article>
+        <pre>
+          def mergeSort(array):
+            # Write your code here.
+            if len(array) == 1:
+                return array
+            mid = len(array)//2
+            arr1 = mergeSort(array[:mid])
+            arr2 = mergeSort(array[mid:])
+            return merge(arr1, arr2)
+
+
+            def merge(a, b):
+                i = j = 0
+                c = []
+                while i < len(a) and j < len(b):
+                    if a[i] < b[j]:
+                        c.append(a[i])
+                        i += 1
+                    else:
+                        c.append(b[j])
+                        j += 1
+
+                while i < len(a):
+                    c.append(a[i])
+                    i += 1
+
+                while j < len(b):
+                    c.append(b[j])
+                    j += 1
+                return c
+        </pre>
+      </article>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

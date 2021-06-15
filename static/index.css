@@ -1,0 +1,110 @@
+:root {
+  --primary-color: #fff;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section .left-section {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #00509d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section .left-section form {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: fixed;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  top: 5rem;
+  left: 5rem;
+}
+
+.section .left-section form > * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.section .left-section form input,
+.section .left-section form select {
+  padding: 0.5rem;
+  margin-left: 10px;
+  border: none;
+  height: 40px;
+  outline: none;
+  background: white;
+  border-bottom: 2px solid black;
+}
+
+.section .left-section form button {
+  margin-left: 10px;
+  letter-spacing: 2px;
+  background: #fff;
+  border-radius: 4px;
+  text-shadow: 3px 3px 3px lightgray;
+  padding: 0.5rem 0.5rem;
+}
+
+.section .left-section .container {
+  position: fixed;
+  top: 9rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid pink;
+  min-height: 5rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 50%;
+}
+
+.section .right-section {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.section .right-section article {
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: lightgray;
+}
+/*# sourceMappingURL=index.css.map */
