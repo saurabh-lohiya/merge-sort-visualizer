@@ -19,6 +19,13 @@ app = Flask(__name__,
 # decorator
 
 # hi
+[1, 2, 3]
+{
+    {
+
+    }
+}
+
 
 @app.route('/', methods=["GET", "POST"])
 def index():
