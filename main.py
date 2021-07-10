@@ -30,7 +30,7 @@ def merge(a, b):
     return c
 
 
-origArray = [7, 5, 1, 6, 9, 12]
+origArray = [8, 3, 7, 11, 19, 2, 21, 9]
 
 
 class TreeNode:
@@ -107,6 +107,7 @@ def mergeTree(root, final):
 # p = mergeTree(root)
 # print(final)
 
+# final = mergeTree(root, [])
 
 def processFinalArray(final):
     final_dict = defaultdict(list)

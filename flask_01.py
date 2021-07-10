@@ -15,8 +15,6 @@ def index():
     if request.method == "POST":
         input_array = request.form.get("list_of_numbers")
         arr = input_array.split(",")
-        # print(arr)
-        # print(mergeSort(arr))
         try:
             arr = [int(i) for i in arr]
             root = traversal(TreeNode(arr))
@@ -29,15 +27,12 @@ def index():
             for fa in lll:
                 for x in fa:
                     string2 += str(x)
+                string2 += "<br/>"
             for fa in pfa:
-                print(fa)
                 for x in fa:
-                    print(x)
                     string1 += str(x)
-            return string2 + "<br/>" + string1
-            # n = [str(i) for i in n]
-            # return " ".join(x)
-
+                string1 += "<br />"
+            return string1 + "<br/>" + string2
         except Exception as e:
             return e
 
