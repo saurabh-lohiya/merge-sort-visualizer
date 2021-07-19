@@ -71,16 +71,13 @@ body {
 }
 
 .section .left-section form button {
-  margin-left: 10px;
   letter-spacing: 2px;
-  background: #fff;
   border-radius: 4px;
   text-shadow: 3px 3px 3px lightgray;
   padding: 0.5rem 0.5rem;
 }
 
 .section .left-section .container {
-  position: fixed;
   top: 9rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -92,19 +89,7 @@ body {
   width: 50%;
 }
 
-.section .right-section {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  padding: 2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .section .right-section article {
-  padding: 2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   background-color: lightgray;
 }
 /*# sourceMappingURL=index.css.map */

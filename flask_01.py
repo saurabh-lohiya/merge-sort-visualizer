@@ -15,24 +15,32 @@ def index():
     if request.method == "POST":
         input_array = request.form.get("list_of_numbers")
         arr = input_array.split(",")
+        # return "<div '> Hello </div>"
         try:
             arr = [int(i) for i in arr]
             root = traversal(TreeNode(arr))
             lll = levelOrderTraversal(root)
             final = []
+            # print(lll)
             pfa = processFinalArray(mergeTree(root, final))
             string1 = ""
             string2 = ""
-            print(pfa)
+            # print(pfa)
+            # string1 += "<div style='padding: 2rem; width: 2rem; border: 2px solid black; height: 2rem;'>" + \
+            #     "hello" + "</div>"
             for fa in lll:
+                string2 += "<div style='display: flex; flex-direction: row; align-items: center; justify-content: center;'>"
                 for x in fa:
-                    string2 += str(x)
-                string2 += "<br/>"
+                    string2 += "<span style='padding: .5rem; width: auto; border: 2px solid black; height: 2rem; margin-left: 2rem;'>" + \
+                        str(x) + "</span>"
+                string2 += "</div> <br/>"
             for fa in pfa:
+                string1 += "<div style='display: flex; flex-direction: row; align-items: center; justify-content: center;'>"
                 for x in fa:
-                    string1 += str(x)
-                string1 += "<br />"
-            return string1 + "<br/>" + string2
+                    string1 += "<span style='padding: .5rem; width: auto; border: 2px solid black; height: 2rem; margin-left: 2rem;'>" + \
+                        str(x) + "</span>"
+                string1 += "</div> <br/>"
+            return string2 + string1
         except Exception as e:
             return e
 

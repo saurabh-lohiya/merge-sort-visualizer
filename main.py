@@ -1,7 +1,6 @@
 from collections import defaultdict
 from collections import deque
 
-
 def mergeSort(array):
     if len(array) == 1:
         return array
@@ -30,7 +29,7 @@ def merge(a, b):
     return c
 
 
-origArray = [8, 3, 7, 11, 19, 2, 21, 9]
+origArray = [4, 2, 11, 9, 3, 1, 7]
 
 
 class TreeNode:
@@ -54,31 +53,24 @@ def traversal(root):
 # root = TreeNode(origArray)
 root = traversal(TreeNode(origArray))
 
-
 def levelOrderTraversal(root):
-    if not root:
-        return []
-    queue = deque([(root, 0)])
+    ans = []
 
-    def BFS(res, current_depth, sublist):
-        while queue:
-            node, depth = queue.popleft()
-            if depth == current_depth:
-                sublist.append(node.val)
-                if node.left:
-                    queue.append((node.left, depth + 1))
-                if node.right:
-                    queue.append((node.right, depth + 1))
-                if not queue:
-                    res.append(sublist)
-            else:
-                res.append(sublist)
-                queue.appendleft((node, depth))
-                BFS(res, current_depth + 1, [])
-        return res
+    if root is None:
+        return ans
+    queue = deque([root])
 
-    return BFS([], 0, [])
-
+    while queue:
+        currSize, currList = len(queue), []
+        for i in range(currSize):
+            currNode = queue.popleft()
+            if currNode.left:
+                queue.append(currNode.left)
+            if currNode.right:
+                queue.append(currNode.right)
+            currList.append(currNode.val)
+        ans.append(currList)
+    return ans
 
 tr = levelOrderTraversal(root)
 # print(tr)
@@ -103,12 +95,6 @@ def mergeTree(root, final):
             final.append(root.val)
     return final
 
-
-# p = mergeTree(root)
-# print(final)
-
-# final = mergeTree(root, [])
-
 def processFinalArray(final):
     final_dict = defaultdict(list)
     for arr in final:
@@ -118,7 +104,7 @@ def processFinalArray(final):
 
 
 f1 = processFinalArray(final)
-# print(f1)
+
 for ls in f1:
     for l in ls:
         print(l, end=" ")
